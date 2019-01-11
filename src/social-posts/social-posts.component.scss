@@ -1,0 +1,43 @@
+ul, li, .a1 {
+    width:70%;
+    margin: auto;
+    list-style-type: none;
+}
+
+.thread{
+    border: 1px black solid;
+    min-height: 120px;
+    padding: 15px;
+    border-radius: 25px;
+    min-width: 700px;
+    background: rgba(255, 255, 255, .7);
+    margin-top: 50px;
+}
+input{
+    border: 0;
+    padding: 7px 15px;
+    border: 1px solid #ccc;
+    position: relative;
+    background: rgba(255, 255, 255, .7);
+
+}
+
+button{
+    display: inline-block;
+    *display: inline;
+    zoom: 1;
+    padding: 6px 20px;
+    margin: 0;
+    cursor: pointer;
+    border: 1px solid #bbb;
+    overflow: visible;
+    font: bold 13px arial, helvetica, sans-serif;
+    text-decoration: none;
+    white-space: nowrap;
+    color: #555;
+}
+
+.comments{
+    overflow-y: auto;
+    max-height: 200px;
+}

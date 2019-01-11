@@ -1,0 +1,32 @@
+<h1>Omar Don't Scare</h1>
+<input autofocus (keyup.enter)='NewPost()' [(ngModel)]='tempTitle' placeholder="Thread Name" /> &nbsp; <button (click)='NewPost()'>New
+  Post</button>
+<br><br>
+<hr style="width: 80%">
+<br><br>
+<div style="overflow-y:auto; max-height:450px;">
+<div *ngFor='let x of Posts; let i = index'>
+  <div class='thread' style="text-align:center;display: inline-block">
+    <span style="padding-left: 650px; " (click)='Delete(i)'>X</span>
+
+    <div class="comments" (click)='boxHider(i)'>
+      <h2 class="a1">&nbsp;&nbsp;&nbsp; {{x.title}}  </h2>
+      <hr style="width: 60%">
+      <ul *ngFor='let v of x.comments'>
+        <li>{{v}}</li>
+        <li>&nbsp;</li>
+      </ul>
+    </div>
+    <div *ngIf='x.hidden'>
+      <br>
+      <input (keyup.enter)='NewComment(i)' [(ngModel)]='x.tempComment' placeholder="Comment" /> &nbsp; <button (click)='NewComment(i)'>Comment</button>
+    </div>
+  </div>
+</div>
+</div>
+<hr style="position: absolute;
+right: 0;
+bottom: 0;
+left: 0;
+margin-bottom: 70px;
+width: 80%">
