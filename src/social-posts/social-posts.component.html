@@ -5,11 +5,11 @@
 <hr style="width: 80%">
 <br><br>
 <div style="overflow-y:auto; max-height:450px;">
-<div *ngFor='let x of Posts; let i = index'>
-  <div class='thread' style="text-align:center;display: inline-block">
-    <span style="padding-left: 650px; " (click)='Delete(i)'>X</span>
+<div  *ngFor='let x of Posts; let i = index'>
+  <div [@changeState]='x.toState' class='thread' style="text-align:center;display: inline-block">
+    <span style="margin-left: 650px; max-width: 10px " (click)='Delete(i)'>X</span>
 
-    <div class="comments" (click)='boxHider(i)'>
+    <div [@changeState]='x.toState'  class="comments" (click)='boxHider(i)'>
       <h2 class="a1">&nbsp;&nbsp;&nbsp; {{x.title}}  </h2>
       <hr style="width: 60%">
       <ul *ngFor='let v of x.comments'>
@@ -19,7 +19,7 @@
     </div>
     <div *ngIf='x.hidden'>
       <br>
-      <input (keyup.enter)='NewComment(i)' [(ngModel)]='x.tempComment' placeholder="Comment" /> &nbsp; <button (click)='NewComment(i)'>Comment</button>
+      <input [@changeState]='x.toState' (keyup.enter)='NewComment(i)' [(ngModel)]='x.tempComment' placeholder="Comment" /> &nbsp; <button (click)='NewComment(i)'>Comment</button>
     </div>
   </div>
 </div>

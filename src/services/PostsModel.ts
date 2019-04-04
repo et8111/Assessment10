@@ -8,4 +8,5 @@ export class Post{
     comments: string[];
     tempComment: string;
     hidden: boolean;
+    toState = 'state1';
 }
